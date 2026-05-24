@@ -1,111 +1,124 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kontak — Andini Rumah Jahit</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontak — Andini Rumah Jahit</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
-
-  <header id="main-header">
-    <div class="logo">
-      <a href="index.html">
-        <span class="logo-icon">A</span>
-        <span class="logo-text">Andini Rumah Jahit</span>
-      </a>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="layanan.html">Layanan</a></li>
-        <li><a href="karya.html">Karya</a></li>
-        <li><a href="proses.html">Proses</a></li>
-        <li><a href="kontak.html" class="active">Kontak</a></li>
-      </ul>
-    </nav>
-    <div class="header-cta">
-      <a href="kontak.html">Konsultasi</a>
-    </div>
-  </header>
-
-  <main>
-    <section class="kontak">
-
-      <!-- Left: info -->
-      <div class="kontak-info">
-        <p class="section-label">Mulai Jahit</p>
-
-        <h1>Kirim foto referensi atau kain yang kamu punya.</h1>
-
-        <p class="kontak-deskripsi">
-          Kamu bisa mulai dari foto kebaya, gamis, dress, set kain, atau bahan yang sudah dibeli.
-          Kami bantu sesuaikan modelnya dengan ukuranmu.
-        </p>
-
-        <ul class="kontak-detail">
-          <li><strong>Layanan:</strong> Jahit custom kebaya, gamis, dan set kain</li>
-          <li><strong>WhatsApp:</strong> 08816-4621-516</li>
-          <li><strong>Instagram:</strong> @andinirumahjahit</li>
-          <li><strong>Jam Buka:</strong> Senin – Sabtu, 09.00 – 18.00 WIB</li>
+  <body>
+    <header id="main-header">
+      <div class="logo">
+        <a href="index.html">
+          <span class="logo-icon">A</span>
+          <span class="logo-text">Andini Rumah Jahit</span>
+        </a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="layanan.html">Layanan</a></li>
+          <li><a href="karya.html">Karya</a></li>
+          <li><a href="proses.html">Proses</a></li>
+          <li><a href="kontak.html" class="active">Kontak</a></li>
         </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="kontak.html">Konsultasi</a>
       </div>
+    </header>
 
-      <!-- Right: form -->
-      <div class="kontak-form">
-        <h2>Isi detail permintaan kamu</h2>
+    <main>
+      <section class="kontak">
+        <!-- Kiri: info -->
+        <div class="kontak-info">
+          <p class="section-label">Mulai Jahit</p>
 
-        <form action="#" method="post">
+          <h1>Kirim foto referensi atau kain yang kamu punya.</h1>
 
-          <div class="form-group">
-            <label for="nama">Nama</label>
-            <input type="text" id="nama" name="nama" placeholder="Nama lengkap kamu" required>
-          </div>
+          <p class="kontak-deskripsi">
+            Kamu bisa mulai dari foto kebaya, gamis, dress, set kain, atau bahan
+            yang sudah dibeli. Kami bantu sesuaikan modelnya dengan ukuranmu.
+          </p>
 
-          <div class="form-group">
-            <label for="kebutuhan">Kebutuhan</label>
-            <div class="select-wrapper">
-              <select id="kebutuhan" name="kebutuhan">
-                <option value="">Pilih jenis jahit</option>
-                <option>Kebaya brokat</option>
-                <option>Gamis</option>
-                <option>Dress</option>
-                <option>Set kain</option>
-                <option>Batik</option>
-              </select>
+          <ul class="kontak-detail">
+            <li>
+              <strong>Layanan:</strong> Jahit custom kebaya, gamis, dan set kain
+            </li>
+            <li><strong>WhatsApp:</strong> 08816-4621-516</li>
+            <li><strong>Instagram:</strong> @andinirumahjahit</li>
+            <li><strong>Jam Buka:</strong> Senin – Sabtu, 09.00 – 18.00 WIB</li>
+          </ul>
+        </div>
+
+        <!-- Kanan: formulir -->
+        <div class="kontak-form">
+          <h2>Isi detail permintaan kamu</h2>
+
+          <form action="#" method="post">
+            <div class="form-group">
+              <label for="nama">Nama</label>
+              <input
+                type="text"
+                id="nama"
+                name="nama"
+                placeholder="Nama lengkap kamu"
+                required
+              />
             </div>
-          </div>
 
-          <div class="form-group">
-            <label for="acara">Acara / Tanggal Dibutuhkan</label>
-            <input type="text" id="acara" name="acara" placeholder="Contoh: pernikahan, 15 Agustus 2025">
-          </div>
+            <div class="form-group">
+              <label for="kebutuhan">Kebutuhan</label>
+              <div class="select-wrapper">
+                <select id="kebutuhan" name="kebutuhan">
+                  <option value="">Pilih jenis jahit</option>
+                  <option>Kebaya brokat</option>
+                  <option>Gamis</option>
+                  <option>Dress</option>
+                  <option>Set kain</option>
+                  <option>Batik</option>
+                </select>
+              </div>
+            </div>
 
-          <div class="form-group">
-            <label for="catatan">Catatan &amp; Referensi</label>
-            <textarea id="catatan" name="catatan"
-              placeholder="Contoh: gamis brokat pink untuk acara keluarga bulan depan, bahan sudah ada."></textarea>
-          </div>
+            <div class="form-group">
+              <label for="acara">Acara / Tanggal Dibutuhkan</label>
+              <input
+                type="text"
+                id="acara"
+                name="acara"
+                placeholder="Contoh: pernikahan, 15 Agustus 2025"
+              />
+            </div>
 
-          <button type="submit" class="btn-kirim">Kirim Permintaan</button>
+            <div class="form-group">
+              <label for="catatan">Catatan &amp; Referensi</label>
+              <textarea
+                id="catatan"
+                name="catatan"
+                placeholder="Contoh: gamis brokat pink untuk acara keluarga bulan depan, bahan sudah ada."
+              ></textarea>
+            </div>
 
-        </form>
-      </div>
+            <button type="submit" class="btn-kirim">Kirim Permintaan</button>
+          </form>
+        </div>
+      </section>
+    </main>
 
-    </section>
-  </main>
+    <footer>
+      <span class="footer-nama">Andini Rumah Jahit</span>
+      <span class="footer-tagline"
+        >Kebaya · Gamis · Brokat · Batik · Fitting</span
+      >
+    </footer>
 
-  <footer>
-    <span class="footer-nama">Andini Rumah Jahit</span>
-    <span class="footer-tagline">Kebaya · Gamis · Brokat · Batik · Fitting</span>
-  </footer>
-
-  <script>
-    const header = document.getElementById('main-header');
-    window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', window.scrollY > 10);
-    });
-  </script>
-</body>
+    <script>
+      const header = document.getElementById("main-header");
+      window.addEventListener("scroll", () => {
+        header.classList.toggle("scrolled", window.scrollY > 10);
+      });
+    </script>
+  </body>
 </html>

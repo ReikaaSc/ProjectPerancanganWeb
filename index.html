@@ -1,88 +1,93 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andini Rumah Jahit — Kebaya, Gamis & Brokat Custom</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Andini Rumah Jahit — Kebaya, Gamis & Brokat Custom</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
-
-  <!-- ══ HEADER ════════════════════════════════════════ -->
-  <header id="main-header">
-    <div class="logo">
-      <a href="index.html">
-        <span class="logo-icon">A</span>
-        <span class="logo-text">Andini Rumah Jahit</span>
-      </a>
-    </div>
-
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="layanan.html">Layanan</a></li>
-        <li><a href="karya.html">Karya</a></li>
-        <li><a href="proses.html">Proses</a></li>
-        <li><a href="kontak.html">Kontak</a></li>
-      </ul>
-    </nav>
-
-    <div class="header-cta">
-      <a href="kontak.html">Konsultasi</a>
-    </div>
-  </header>
-
-  <!-- ══ HERO ══════════════════════════════════════════ -->
-  <main>
-    <section class="hero">
-
-      <div class="hero-content">
-        <p class="hero-kategori">Jahit Kebaya, Gamis &amp; Set Kain</p>
-
-        <h1>Busana lembut dengan detail <em>brokat,</em> payet, dan motif yang hidup.</h1>
-
-        <p class="hero-deskripsi">
-          Terinspirasi dari kebaya lace abu, gamis floral, dress brokat pink, dan set batik —
-          setiap potongan dibuat rapi sesuai bentuk tubuh.
-        </p>
-
-        <div class="hero-tombol">
-          <a href="kontak.html" class="btn-utama">Buat Janji Ukur</a>
-          <a href="karya.html" class="btn-kedua">Lihat Karya</a>
-        </div>
+  <body>
+    <!-- ══ BAGIAN HEADER ════════════════════════════════════════ -->
+    <header id="main-header">
+      <div class="logo">
+        <a href="index.html">
+          <span class="logo-icon">A</span>
+          <span class="logo-text">Andini Rumah Jahit</span>
+        </a>
       </div>
 
-      <div class="hero-image-side">
-        <div class="hero-image-placeholder"></div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="layanan.html">Layanan</a></li>
+          <li><a href="karya.html">Karya</a></li>
+          <li><a href="proses.html">Proses</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </nav>
 
-        <div class="hero-kartu">
-          <p class="kartu-label">Detail Jahit</p>
-          <h2 class="kartu-angka">1.200+</h2>
-          <p class="kartu-deskripsi">busana custom, kebaya, gamis, dan set kain dibuat dengan fitting teliti.</p>
-        </div>
+      <div class="header-cta">
+        <a href="kontak.html">Konsultasi</a>
       </div>
+    </header>
 
-    </section>
-  </main>
+    <!-- ══ BAGIAN HERO ══════════════════════════════════════════ -->
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <p class="hero-kategori">Jahit Kebaya, Gamis &amp; Set Kain</p>
 
-  <!-- ══ FOOTER ════════════════════════════════════════ -->
-  <footer>
-    <span class="footer-nama">Andini Rumah Jahit</span>
-    <span class="footer-tagline">Kebaya · Gamis · Brokat · Batik · Fitting</span>
-  </footer>
+          <h1>
+            Busana lembut dengan detail <em>brokat,</em> payet, dan motif yang
+            hidup.
+          </h1>
 
-  <script>
-    // Sticky header shadow on scroll
-    const header = document.getElementById('main-header');
-    window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', window.scrollY > 10);
-    });
+          <p class="hero-deskripsi">
+            Terinspirasi dari kebaya lace abu, gamis floral, dress brokat pink,
+            dan set batik — setiap potongan dibuat rapi sesuai bentuk tubuh.
+          </p>
 
-    // Active nav link
-    document.querySelectorAll('nav a').forEach(link => {
-      if (link.href === window.location.href) link.classList.add('active');
-    });
-  </script>
-</body>
+          <div class="hero-tombol">
+            <a href="kontak.html" class="btn-utama">Buat Janji Ukur</a>
+            <a href="karya.html" class="btn-kedua">Lihat Karya</a>
+          </div>
+        </div>
+
+        <div class="hero-image-side">
+          <div class="hero-image-placeholder"></div>
+
+          <div class="hero-kartu">
+            <p class="kartu-label">Detail Jahit</p>
+            <h2 class="kartu-angka">1.200+</h2>
+            <p class="kartu-deskripsi">
+              busana custom, kebaya, gamis, dan set kain dibuat dengan fitting
+              teliti.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ══ BAGIAN FOOTER ════════════════════════════════════════ -->
+    <footer>
+      <span class="footer-nama">Andini Rumah Jahit</span>
+      <span class="footer-tagline"
+        >Kebaya · Gamis · Brokat · Batik · Fitting</span
+      >
+    </footer>
+
+    <script>
+      // Bayangan header lengket saat scroll
+      const header = document.getElementById("main-header");
+      window.addEventListener("scroll", () => {
+        header.classList.toggle("scrolled", window.scrollY > 10);
+      });
+
+      // Link nav aktif
+      document.querySelectorAll("nav a").forEach((link) => {
+        if (link.href === window.location.href) link.classList.add("active");
+      });
+    </script>
+  </body>
 </html>
