@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kontak — Andini Rumah Jahit</title>
     <link rel="stylesheet" href="style.css" />
+    <script
+      id="emailjs-sdk"
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
   </head>
 
   <body>
@@ -56,7 +61,7 @@
         <div class="kontak-form">
           <h2>Isi detail permintaan kamu</h2>
 
-          <form action="#" method="post">
+          <form id="kontak-form">
             <div class="form-group">
               <label for="nama">Nama</label>
               <input
@@ -69,19 +74,31 @@
             </div>
 
             <div class="form-group">
-              <label for="pelanggan">Nomor Pelanggan</label>
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email kamu"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="pelanggan">Nomor WhatsApp</label>
               <input
                 type="tel"
                 id="pelanggan"
                 name="pelanggan"
                 placeholder="Masukkan nomor WhatsApp kamu"
+                required
               />
             </div>
 
             <div class="form-group">
               <label for="kebutuhan">Kebutuhan</label>
               <div class="select-wrapper">
-                <select id="kebutuhan" name="kebutuhan">
+                <select id="kebutuhan" name="kebutuhan" required>
                   <option value="">Pilih jenis jahit</option>
                   <option>Kebaya brokat</option>
                   <option>Gamis</option>
@@ -99,6 +116,7 @@
                 id="acara"
                 name="acara"
                 placeholder="Contoh: pernikahan, 15 Agustus 2025"
+                required
               />
             </div>
 
@@ -108,18 +126,13 @@
                 id="catatan"
                 name="catatan"
                 placeholder="Contoh: gamis brokat pink untuk acara keluarga bulan depan, bahan sudah ada."
+                required
               ></textarea>
             </div>
 
             <button type="submit" class="btn-kirim">Kirim Permintaan</button>
           </form>
         </div>
-      </section>
-
-      <section class="antrian-section">
-          <h2>Daftar Antrian Pelanggan</h2>
-          <p id="info-antrian">Belum ada antrian.</p>
-          <ol id="daftar-antrian"></ol>
       </section>
     </main>
 
@@ -135,9 +148,104 @@
       window.addEventListener("scroll", () => {
         header.classList.toggle("scrolled", window.scrollY > 10);
       });
-    </script>
 
-    <script src="queue.js"></script>
-    
+      // Wait for EmailJS (@emailjs/browser) to load, then initialize and attach handler
+      (function () {
+        function ensureEmailJsReady(cb) {
+          if (typeof window.emailjs !== "undefined") return cb();
+
+          // If SDK script tag exists but hasn't loaded, attach onload
+          var sdk = document.getElementById("emailjs-sdk");
+          if (sdk) {
+            if (sdk.readyState === "complete" || sdk.readyState === "loaded") {
+              // give it a tick
+              setTimeout(function () {
+                if (typeof window.emailjs !== "undefined") return cb();
+                console.error(
+                  "emailjs script present but emailjs global missing",
+                );
+              }, 50);
+              return;
+            }
+            sdk.addEventListener("load", function () {
+              console.log("EmailJS SDK loaded (script onload)");
+              return cb();
+            });
+            sdk.addEventListener("error", function () {
+              console.error("Failed to load EmailJS SDK script");
+            });
+          } else {
+            // Create script tag and append
+            sdk = document.createElement("script");
+            sdk.id = "emailjs-sdk";
+            sdk.type = "text/javascript";
+            sdk.src =
+              "https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js";
+            sdk.onload = function () {
+              console.log("EmailJS SDK dynamically loaded");
+              return cb();
+            };
+            sdk.onerror = function () {
+              console.error("Failed to load EmailJS SDK dynamically");
+            };
+            document.head.appendChild(sdk);
+          }
+
+          // Fallback: poll for global for 10s
+          var waited = 0;
+          var iv = setInterval(function () {
+            if (typeof window.emailjs !== "undefined") {
+              clearInterval(iv);
+              return cb();
+            }
+            waited += 100;
+            if (waited > 10000) {
+              clearInterval(iv);
+              console.error("EmailJS did not load within 10s");
+            }
+          }, 100);
+        }
+
+        ensureEmailJsReady(function () {
+          try {
+            emailjs.init("eU4oaaxnFvxldpT-j");
+          } catch (err) {
+            console.error("emailjs.init error:", err);
+          }
+
+          document
+            .getElementById("kontak-form")
+            .addEventListener("submit", function (e) {
+              e.preventDefault();
+
+              var params = {
+                nama: document.getElementById("nama").value,
+                email: document.getElementById("email").value,
+                pelanggan: document.getElementById("pelanggan").value,
+                kebutuhan: document.getElementById("kebutuhan").value,
+                acara: document.getElementById("acara").value,
+                catatan: document.getElementById("catatan").value,
+              };
+
+              emailjs.send("service_djrdj2e", "template_0ajuhhp", params).then(
+                function (response) {
+                  console.log("EmailJS send response:", response);
+                  alert(
+                    "Permintaan berhasil dikirim! Kami akan segera menghubungi Anda.",
+                  );
+                  document.getElementById("kontak-form").reset();
+                  window.location.href = "index.html";
+                },
+                function (error) {
+                  console.error("Email.js error:", error);
+                  alert(
+                    "Gagal mengirim permintaan. Silakan coba lagi. Lihat console untuk detail.",
+                  );
+                },
+              );
+            });
+        });
+      })();
+    </script>
   </body>
 </html>
