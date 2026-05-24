@@ -1,70 +1,92 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="id">
 <head>
-    <title>Karya - Andini Rumah Jahit</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karya — Andini Rumah Jahit</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <div class="logo">
-            <a href="index.html">
-                <span class="logo-icon">A</span>
-                <span class="logo-text">Andini Rumah Jahit</span>
-            </a>
+  <header id="main-header">
+    <div class="logo">
+      <a href="index.html">
+        <span class="logo-icon">A</span>
+        <span class="logo-text">Andini Rumah Jahit</span>
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="layanan.html">Layanan</a></li>
+        <li><a href="karya.html" class="active">Karya</a></li>
+        <li><a href="proses.html">Proses</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      <a href="kontak.html">Konsultasi</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="karya">
+
+      <p class="section-label">Arah Karya</p>
+      <h1 class="section-title">Referensi model yang<br>bisa kamu bawa.</h1>
+
+      <div class="karya-galeri">
+
+        <!-- Large featured item -->
+        <div class="karya-item karya-besar">
+          <div class="karya-gambar">
+            <!-- Ganti src dengan foto asli -->
+            <!-- <img src="foto/kebaya-putih.jpg" alt="Kebaya putih lace premium"> -->
+          </div>
+          <div class="karya-besar-label">Kebaya lace — putih gading</div>
         </div>
 
-        <nav>
-            <ul>
-                <li><a href="layanan.html">Layanan</a></li>
-                <li><a href="karya.html">Karya</a></li>
-                <li><a href="proses.html">Proses</a></li>
-                <li><a href="kontak.html">Kontak</a></li>
-            </ul>
-        </nav>
-
-        <div class="header-cta">
-            <a href="#konsultasi">Konsultasi</a>
+        <!-- Small items on the right -->
+        <div class="karya-item">
+          <div class="karya-gambar">
+            <!-- <img src="foto/outer-brokat-abu.jpg" alt="Outer brokat abu payet"> -->
+          </div>
+          <p class="karya-kategori">Payet &amp; Lace</p>
+          <p class="karya-deskripsi">Outer brokat abu dengan jalur payet hitam-putih sebagai aksen elegan.</p>
         </div>
-    </header>
 
-    <main>
-        <section class="karya">
+        <div class="karya-item">
+          <div class="karya-gambar">
+            <!-- <img src="foto/brokat-elegan.jpg" alt="Kebaya brokat elegan"> -->
+          </div>
+          <p class="karya-kategori">Brokat Elegan</p>
+          <p class="karya-deskripsi">Look putih lembut untuk inspirasi kebaya akad, tunik, atau dress acara.</p>
+        </div>
 
-            <p class="karya-label">ARAH KARYA</p>
-            <h1>Referensi model yang bisa kamu bawa.</h1>
+        <div class="karya-item">
+          <div class="karya-gambar">
+            <!-- <img src="foto/gamis-motif.jpg" alt="Gamis motif floral hangat"> -->
+          </div>
+          <p class="karya-kategori">Gamis Motif</p>
+          <p class="karya-deskripsi">Motif kecil, warna hangat, renda dada, dan tali pinggang yang manis.</p>
+        </div>
 
-            <div class="karya-galeri">
+      </div>
 
-                <div class="karya-item karya-besar">
-                    <div class="karya-gambar"></div>
-                </div>
+    </section>
+  </main>
 
-                <div class="karya-item">
-                    <div class="karya-gambar"></div>
-                    <p class="karya-kategori">PAYET & LACE</p>
-                    <p class="karya-deskripsi">Outer brokat abu dengan jalur payet hitam-putih sebagai aksen.</p>
-                </div>
+  <footer>
+    <span class="footer-nama">Andini Rumah Jahit</span>
+    <span class="footer-tagline">Kebaya · Gamis · Brokat · Batik · Fitting</span>
+  </footer>
 
-                <div class="karya-item">
-                    <div class="karya-gambar"></div>
-                    <p class="karya-kategori">BROKAT ELEGAN</p>
-                    <p class="karya-deskripsi">Look putih lembut untuk inspirasi kebaya akad, tunik, atau dress acara.
-                    </p>
-                </div>
-
-                <div class="karya-item">
-                    <div class="karya-gambar"></div>
-                    <p class="karya-kategori">GAMIS MOTIF</p>
-                    <p class="karya-deskripsi">Motif kecil, warna hangat, renda dada, dan tali pinggang manis.</p>
-                </div>
-
-            </div>
-
-        </section>
-    </main>
-
+  <script>
+    const header = document.getElementById('main-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 10);
+    });
+  </script>
 </body>
-
 </html>

@@ -1,67 +1,79 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layanan - Andini Rumah Jahit</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layanan — Andini Rumah Jahit</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <div class="logo">
-            <a href="index.html">
-                <span class="logo-icon">A</span>
-                <span class="logo-text">Andini Rumah Jahit</span>
-            </a>
+  <header id="main-header">
+    <div class="logo">
+      <a href="index.html">
+        <span class="logo-icon">A</span>
+        <span class="logo-text">Andini Rumah Jahit</span>
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="layanan.html" class="active">Layanan</a></li>
+        <li><a href="karya.html">Karya</a></li>
+        <li><a href="proses.html">Proses</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      <a href="kontak.html">Konsultasi</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="layanan">
+
+      <p class="section-label">Layanan</p>
+      <h1 class="section-title">Pilih model yang<br>ingin dibuat.</h1>
+
+      <div class="layanan-kartu-wrapper">
+
+        <div class="layanan-kartu">
+          <div class="kartu-ikon"></div>
+          <h2>Kebaya &amp; Brokat</h2>
+          <p>Kebaya lace, outer brokat, payet mutiara, dan detail pinggir yang rapi untuk hari spesial.</p>
+          <span class="kartu-detail">Konsultasi</span>
         </div>
 
-        <nav>
-            <ul>
-                <li><a href="layanan.html">Layanan</a></li>
-                <li><a href="karya.html">Karya</a></li>
-                <li><a href="proses.html">Proses</a></li>
-                <li><a href="kontak.html">Kontak</a></li>
-            </ul>
-        </nav>
-
-        <div class="header-cta">
-            <a href="#konsultasi">Konsultasi</a>
+        <div class="layanan-kartu">
+          <div class="kartu-ikon"></div>
+          <h2>Gamis &amp; Dress</h2>
+          <p>Gamis floral, dress pesta, model tali pinggang, dan siluet longgar nyaman untuk sehari-hari.</p>
+          <span class="kartu-detail">Konsultasi</span>
         </div>
-    </header>
 
-    <main>
-        <section class="layanan">
+        <div class="layanan-kartu">
+          <div class="kartu-ikon"></div>
+          <h2>Set Kain &amp; Batik</h2>
+          <p>Padanan atasan dan kain motif untuk pengajian, keluarga, atau acara resmi yang berkesan.</p>
+          <span class="kartu-detail">Konsultasi</span>
+        </div>
 
-            <p class="layanan-label">LAYANAN</p>
-            <h1>Pilih model yang ingin dibuat.</h1>
+      </div>
 
-            <div class="layanan-kartu-wrapper">
+    </section>
+  </main>
 
-                <div class="layanan-kartu">
-                    <div class="kartu-ikon"></div>
-                    <h2>Kebaya & Brokat</h2>
-                    <p>Kebaya lace, outer brokat, payet mutiara, dan detail pinggir yang rapi.</p>
-                </div>
+  <footer>
+    <span class="footer-nama">Andini Rumah Jahit</span>
+    <span class="footer-tagline">Kebaya · Gamis · Brokat · Batik · Fitting</span>
+  </footer>
 
-                <div class="layanan-kartu">
-                    <div class="kartu-ikon"></div>
-                    <h2>Gamis & Dress</h2>
-                    <p>Gamis floral, dress pesta, model tali pinggang, dan siluet longgar nyaman.</p>
-                </div>
-
-                <div class="layanan-kartu">
-                    <div class="kartu-ikon"></div>
-                    <h2>Set Kain & Batik</h2>
-                    <p>Padanan atasan dan kain motif untuk pengajian, keluarga, atau acara resmi.</p>
-                </div>
-
-            </div>
-
-        </section>
-    </main>
-
+  <script>
+    const header = document.getElementById('main-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 10);
+    });
+  </script>
 </body>
-
 </html>

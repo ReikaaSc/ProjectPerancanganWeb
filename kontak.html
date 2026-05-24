@@ -1,79 +1,111 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="id">
 <head>
-    <title>Kontak - Andini Rumah Jahit</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontak — Andini Rumah Jahit</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <div class="logo">
-            <a href="index.html">
-                <span class="logo-icon">A</span>
-                <span class="logo-text">Andini Rumah Jahit</span>
-            </a>
-        </div>
+  <header id="main-header">
+    <div class="logo">
+      <a href="index.html">
+        <span class="logo-icon">A</span>
+        <span class="logo-text">Andini Rumah Jahit</span>
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="layanan.html">Layanan</a></li>
+        <li><a href="karya.html">Karya</a></li>
+        <li><a href="proses.html">Proses</a></li>
+        <li><a href="kontak.html" class="active">Kontak</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      <a href="kontak.html">Konsultasi</a>
+    </div>
+  </header>
 
-        <nav>
-            <ul>
-                <li><a href="layanan.html">Layanan</a></li>
-                <li><a href="karya.html">Karya</a></li>
-                <li><a href="proses.html">Proses</a></li>
-                <li><a href="kontak.html">Kontak</a></li>
-            </ul>
-        </nav>
+  <main>
+    <section class="kontak">
 
-        <div class="header-cta">
-            <a href="#konsultasi">Konsultasi</a>
-        </div>
-    </header>
+      <!-- Left: info -->
+      <div class="kontak-info">
+        <p class="section-label">Mulai Jahit</p>
 
-    <main>
-        <section class="kontak">
+        <h1>Kirim foto referensi atau kain yang kamu punya.</h1>
 
-            <div class="kontak-info">
-                <p class="kontak-label">MULAI JAHIT</p>
-                <h1>Kirim foto referensi atau kain yang kamu punya.</h1>
-                <p class="kontak-deskripsi">Kamu bisa mulai dari foto kebaya, gamis, dress, set kain, atau bahan yang sudah dibeli. Kami bantu sesuaikan modelnya dengan ukuranmu.</p>
+        <p class="kontak-deskripsi">
+          Kamu bisa mulai dari foto kebaya, gamis, dress, set kain, atau bahan yang sudah dibeli.
+          Kami bantu sesuaikan modelnya dengan ukuranmu.
+        </p>
 
-                <ul class="kontak-detail">
-                    <li>Jahit custom kebaya, gamis, dan set kain</li>
-                    <li>WhatsApp 08816-4621-516</li>
-                    <li>Instagram @andinirumahjahit</li>
-                    <li>Buka Senin-Sabtu, 09.00-18.00</li>
-                </ul>
+        <ul class="kontak-detail">
+          <li><strong>Layanan:</strong> Jahit custom kebaya, gamis, dan set kain</li>
+          <li><strong>WhatsApp:</strong> 08816-4621-516</li>
+          <li><strong>Instagram:</strong> @andinirumahjahit</li>
+          <li><strong>Jam Buka:</strong> Senin – Sabtu, 09.00 – 18.00 WIB</li>
+        </ul>
+      </div>
+
+      <!-- Right: form -->
+      <div class="kontak-form">
+        <h2>Isi detail permintaan kamu</h2>
+
+        <form action="#" method="post">
+
+          <div class="form-group">
+            <label for="nama">Nama</label>
+            <input type="text" id="nama" name="nama" placeholder="Nama lengkap kamu" required>
+          </div>
+
+          <div class="form-group">
+            <label for="kebutuhan">Kebutuhan</label>
+            <div class="select-wrapper">
+              <select id="kebutuhan" name="kebutuhan">
+                <option value="">Pilih jenis jahit</option>
+                <option>Kebaya brokat</option>
+                <option>Gamis</option>
+                <option>Dress</option>
+                <option>Set kain</option>
+                <option>Batik</option>
+              </select>
             </div>
+          </div>
 
-            <div class="kontak-form">
-                <form>
-                    <label for="nama">Nama</label>
-                    <input type="text" id="nama" name="nama" placeholder="Nama kamu">
+          <div class="form-group">
+            <label for="acara">Acara / Tanggal Dibutuhkan</label>
+            <input type="text" id="acara" name="acara" placeholder="Contoh: pernikahan, 15 Agustus 2025">
+          </div>
 
-                    <label for="kebutuhan">Kebutuhan</label>
-                    <select id="kebutuhan" name="kebutuhan">
-                        <option>Kebaya brokat</option>
-                        <option>Gamis</option>
-                        <option>Dress</option>
-                        <option>Set kain</option>
-                        <option>Batik</option>
-                    </select>
+          <div class="form-group">
+            <label for="catatan">Catatan &amp; Referensi</label>
+            <textarea id="catatan" name="catatan"
+              placeholder="Contoh: gamis brokat pink untuk acara keluarga bulan depan, bahan sudah ada."></textarea>
+          </div>
 
-                    <label for="catatan">Catatan</label>
-                    <textarea id="catatan" name="catatan" placeholder="Contoh: gamis brokat pink untuk acara keluarga bulan depan"></textarea>
+          <button type="submit" class="btn-kirim">Kirim Permintaan</button>
 
-                    <button type="submit" class="btn-kirim">Kirim Permintaan</button>
-                </form>
-            </div>
+        </form>
+      </div>
 
-        </section>
-    </main>
+    </section>
+  </main>
 
-    <footer>
-        <span class="footer-nama">Andini Rumah Jahit</span>
-        <span class="footer-tagline">Kebaya, gamis, brokat, batik, fitting.</span>
-    </footer>
+  <footer>
+    <span class="footer-nama">Andini Rumah Jahit</span>
+    <span class="footer-tagline">Kebaya · Gamis · Brokat · Batik · Fitting</span>
+  </footer>
 
+  <script>
+    const header = document.getElementById('main-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 10);
+    });
+  </script>
 </body>
-
 </html>
