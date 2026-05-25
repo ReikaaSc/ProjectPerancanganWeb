@@ -1,10 +1,3 @@
-// ============================================================
-// SISTEM ANTRIAN PELANGGAN - Andini Rumah Jahit
-// File: queue.js
-// ============================================================
-
-// ── FUNGSI UTAMA ────────────────────────────────────────────
-
 function ambilAntrian() {
     let data = localStorage.getItem("antrian_pelanggan");
     return data ? JSON.parse(data) : [];
@@ -86,7 +79,6 @@ function tampilkanAntrian() {
 }
 
 // ── EVENT LISTENER ──────────────────────────────────────────
-
 document.addEventListener("DOMContentLoaded", function() {
 
     tampilkanAntrian();

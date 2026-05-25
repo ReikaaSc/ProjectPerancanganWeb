@@ -1,8 +1,3 @@
-// ============================================================
-// LOAD GAMBAR KARYA DARI database.json
-// File: karya.js
-// ============================================================
-
 // fetch() = fungsi JS untuk membaca file dari luar (JSON, dll)
 fetch("database.json")
     .then(function(response) {
@@ -17,8 +12,8 @@ fetch("database.json")
         console.log("Gagal load database.json:", error);
     });
 
-function tampilkanKarya(data) {
 
+function tampilkanKarya(data) {
     // Ambil kolom kiri dan kanan dari karya.html
     let kolomKiri  = document.querySelector(".kiri");
     let kolomKanan = document.querySelector(".kanan");
@@ -27,9 +22,7 @@ function tampilkanKarya(data) {
     kolomKiri.innerHTML  = "";
     kolomKanan.innerHTML = "";
 
-    // Loop tiap item di database.json
     data.forEach(function(item, index) {
-
         // Skip Banner/placeholder — itu bukan karya yang ditampilkan
         if (item.foto === "placeholder.svg") return;
 
@@ -43,8 +36,7 @@ function tampilkanKarya(data) {
             </div>
             <p class="karya-kategori">${item.Item}</p>
         `;
-
-        // Item genap → kolom kiri, item ganjil → kolom kanan
+        
         if (index % 2 === 0) {
             kolomKiri.appendChild(div);
         } else {
