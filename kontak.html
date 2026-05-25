@@ -230,6 +230,13 @@
               emailjs.send("service_djrdj2e", "template_0ajuhhp", params).then(
                 function (response) {
                   console.log("EmailJS send response:", response);
+                  let nama      = params.nama;
+                  let noHp      = params.pelanggan;
+                  let kebutuhan = params.kebutuhan;
+                  let acara     = params.acara;
+                  let catatan   = params.catatan;
+                  enqueue(nama, kebutuhan, acara, catatan, noHp);
+
                   alert(
                     "Permintaan berhasil dikirim! Kami akan segera menghubungi Anda.",
                   );

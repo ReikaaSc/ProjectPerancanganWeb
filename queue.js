@@ -82,34 +82,4 @@ function tampilkanAntrian() {
 document.addEventListener("DOMContentLoaded", function() {
 
     tampilkanAntrian();
-
-    let form = document.querySelector(".kontak-form form");
-
-    form.addEventListener("submit", function(event) {
-        event.preventDefault();
-
-        // Ambil nilai dari semua field
-        let nama      = document.getElementById("nama").value.trim();
-        let noHp = document.getElementById("pelanggan").value.trim();
-        let kebutuhan = document.getElementById("kebutuhan").value;
-        let acara     = document.getElementById("acara").value.trim();  // field baru
-        let catatan   = document.getElementById("catatan").value.trim();
-
-        // Validasi
-        if (nama === "") {
-            alert("Nama tidak boleh kosong!");
-            return;
-        }
-
-        if (kebutuhan === "") {
-            alert("Pilih jenis kebutuhan dulu!");
-            return;
-        }
-
-        enqueue(nama, kebutuhan, acara, catatan, noHp);
-        tampilkanAntrian();
-
-        form.reset();
-        alert("Permintaan berhasil dikirim! Kamu masuk ke antrian.");
-    });
 });
