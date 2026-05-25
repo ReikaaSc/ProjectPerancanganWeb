@@ -5,7 +5,6 @@ fetch("database.json")
         return response.json();
     })
     .then(function(data) {
-        // data = isi database.json dalam bentuk array
         tampilkanKarya(data);
     })
     .catch(function(error) {
@@ -14,17 +13,14 @@ fetch("database.json")
 
 
 function tampilkanKarya(data) {
-    // Ambil kolom kiri dan kanan dari karya.html
     let kolomKiri  = document.querySelector(".kiri");
     let kolomKanan = document.querySelector(".kanan");
 
-    // Kosongkan dulu isi HTML yang ada (yang masih di-comment)
     kolomKiri.innerHTML  = "";
     kolomKanan.innerHTML = "";
 
     data.forEach(function(item, index) {
-        // Skip Banner/placeholder — itu bukan karya yang ditampilkan
-        if (item.foto === "placeholder.svg") return;
+        if (item.foto === "ini.png") return;
 
         // Buat elemen kartu karya
         let div = document.createElement("div");

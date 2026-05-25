@@ -8,7 +8,6 @@
   </head>
 
   <body>
-    <!-- ══ BAGIAN HEADER ════════════════════════════════════════ -->
     <header id="main-header">
       <div class="logo">
         <a href="index.html">
@@ -32,7 +31,6 @@
       </div>
     </header>
 
-    <!-- ══ BAGIAN HERO ══════════════════════════════════════════ -->
     <main>
       <section class="hero">
         <div class="hero-content">
@@ -70,8 +68,7 @@
         </div>
       </section>
     </main>
-
-    <!-- ══ BAGIAN FOOTER ════════════════════════════════════════ -->
+    
     <footer>
       <span class="footer-nama">Andini Rumah Jahit</span>
       <span class="footer-tagline"
@@ -80,13 +77,11 @@
     </footer>
 
     <script>
-      // Bayangan header lengket saat scroll
       const header = document.getElementById("main-header");
       window.addEventListener("scroll", () => {
         header.classList.toggle("scrolled", window.scrollY > 10);
       });
 
-      // Link nav aktif
       document.querySelectorAll("nav a").forEach((link) => {
         if (link.href === window.location.href) link.classList.add("active");
       });
